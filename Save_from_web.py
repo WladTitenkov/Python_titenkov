@@ -11,13 +11,13 @@ def save_rom_www(link):
 
 
 
-n=3131457
-while n <= 3131459:
-    n += 1
-    link3 = 'http://elib.shpl.ru/pages/' + str(n) + '/zooms/8'
-    print (n)
-    print (link3)
-    save_rom_www(link3)
+# n=3131457
+# while n <= 3131459:
+#     n += 1
+#     link3 = 'http://elib.shpl.ru/pages/' + str(n) + '/zooms/8'
+#     print (n)
+#     print (link3)
+#     save_rom_www(link3)
 
 
 
