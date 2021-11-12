@@ -35,5 +35,18 @@
 #     else:
 #         return False
 
+# num = 12344321
+#
+# print(str(num) == str(num)[::-1])
+
+'''Условие задачи. Найти сумму всех натуральных чисел от 1 до N включительно.'''
+
+# n = input('Enter number: ')
+# n = range(1, int(n) + 1)
+# print(n)
+# sum = 0
+# for i in n:
+#     sum = sum + i
+#     print (f'{sum-i}+{i}={sum}')
 
 
