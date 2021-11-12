@@ -21,11 +21,19 @@
 Чтобы вернуть True, напишите "return True";
 чтобы вернуть False, напишите "return False".
 '''
-user_database = {
-    'user': 'password',
-    'iseedeadpeople': 'greedisgood',
-    'hesoyam': 'tgm'
-}
+# user_database = {
+#     'user': 'password',
+#     'iseedeadpeople': 'greedisgood',
+#     'hesoyam': 'tgm'
+# }
+# def check_user(username, password):
+#     if username in user_database:
+#         if user_database[username] == password:
+#             return True
+#         else:
+#             return False
+#     else:
+#         return False
 
-print ('user' in user_database)
-print (type(user_database))
+
+
