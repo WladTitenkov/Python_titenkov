@@ -250,13 +250,20 @@ num = random.randint(0, 10000)
 # # print("End of the cycle") # конец цикла
 
 
-text = """
-The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well.
-
-Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next. First, she tried to look down and make out what she was coming to, but it was too dark to see anything; then she looked at the sides of the well, and noticed that they were filled with cupboards and book-shelves; here and there she saw maps and pictures hung upon pegs. She took down a jar from one of the shelves as she passed; it was labelled `ORANGE MARMALADE', but to her great disappointment it was empty: she did not like to drop the jar for fear of killing somebody, so managed to put it into one of the cupboards as she fell past it.
-
-`Well!' thought Alice to herself, `after such a fall as this, I shall think nothing of tumbling down stairs! How brave they'll all think me at home! Why, I wouldn't say anything about it, even if I fell off the top of the house!' (Which was very likely true.)
-"""
+# text = """ The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly
+# that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well.
+#
+# Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about
+# her and to wonder what was going to happen next. First, she tried to look down and make out what she was coming to,
+# but it was too dark to see anything; then she looked at the sides of the well, and noticed that they were filled
+# with cupboards and book-shelves; here and there she saw maps and pictures hung upon pegs. She took down a jar from
+# one of the shelves as she passed; it was labelled `ORANGE MARMALADE', but to her great disappointment it was empty:
+# she did not like to drop the jar for fear of killing somebody, so managed to put it into one of the cupboards as
+# she fell past it.
+#
+# `Well!' thought Alice to herself, `after such a fall as this, I shall think nothing of tumbling down stairs! How
+# brave they'll all think me at home! Why, I wouldn't say anything about it, even if I fell off the top of the
+# house!' (Which was very likely true.) """
 
 # text = text.lower()
 # text = text.replace(" ", "")
@@ -473,8 +480,8 @@ for i in range(3):
 # print(word_dict)
 
 
-
 import phonenumbers
+
 # from phonenumbers import timezone
 
 # my_number = phonenumbers.parse("+7(39197)2-42-29")
@@ -492,7 +499,186 @@ import phonenumbers
 print(get_total(15, 50))
 # 750'''
 
-def get_total (quantity, price):
+# def get_total (quantity, price):
+#
+#     return quantity * price
+# print(get_total(15, 50))
 
-    return quantity * price
-print(get_total(15, 50))
+
+'''ЗАДАНИЕ 3.1 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+
+?
+
+Попробуйте добавить в новую функцию get_time из примера выше проверку скорости на равенство нулю. Если скорость равна 
+нулю, верните ValueError с сообщением "Speed cannot be equal to 0!". 
+
+Вы можете проверить своё решение, вызвав функцию get_time:'''
+
+# def get_time(distance, speed):
+#     if distance < 0 or speed < 0:
+#         raise ValueError("Distance or speed cannot be below 0!")
+#     if speed == 0:
+#         raise ValueError('Speed cannot be equal to 0!')
+#     return distance / speed
+#
+#
+# print(get_time(100, 0))
+
+"""Задание 3.5"""
+
+# def add_mark(name, mark, journal=None):
+#    # Добавьте здесь проверку аргумента mark
+#     if mark not in [2,3,4,5]:
+#         raise ValueError('Invalid Mark!')
+#     if journal is None:
+#         journal = {}
+#     journal[name] = mark
+#     return journal
+
+
+# phone = "iphone"
+# phone_char_list = [i for i in phone]
+#
+# print(phone_char_list)
+
+# def mean(*numbers):
+#     # С помощью встроенной функции isinstance
+#     # проверим, что numbers — это tuple
+#     print(type(numbers))
+#     # Напечатаем содержимое объекта numbers
+#     print(numbers)
+#     result = sum(numbers) / len(numbers)
+#     return result
+#
+#
+# print(mean(5, 4, 4, 3))
+
+'''Напишите функцию mult, которая считает произведение переданных в неё чисел через запятую.
+
+Особое указание: посчитайте результат с использованием цикла for.
+
+После создания функции воспользуйтесь следующим кодом для самопроверки:
+
+print(mult(3,5,10))'''
+
+# def mult(*numbers):
+#     print(numbers)
+#     print(type(numbers))
+#
+#     res = 0
+#     for i in numbers:
+#         print(f"i = {i}")
+#         if res == 0:
+#             res += i
+#         else:
+#             res = res * i
+#             print (res)
+#     return res
+#
+#
+# print(mult(3, 5, 10))
+
+
+# langs = ['Python', 'SQL', 'Machine Learning', 'Statistics']
+# print(langs)
+# print(*langs, sep=', ')
+
+
+'''ЗАДАНИЕ 5.3 (НА САМОПРОВЕРКУ)
+
+Создайте список оценок студента:
+
+marks = [4,5,5,5,5,3,4,4,5,4,5] Передайте в функцию mean_mark, которая была создана в начале данного подраздела 
+юнита, этот список, а также фамилию студента Kuznetsov с помощью оператора распаковки. 
+
+Функция mean_mark продублирована:
+
+def mean_mark(name, *marks):
+    result = sum(marks) / len(marks)
+    # Не возвращаем результат, а печатаем его
+    print(name+':', result)'''
+
+# def mean_mark(name, *marks):
+#     result = sum(marks) / len(marks)
+#     # Не возвращаем результат, а печатаем его
+#     print(name+':', result)
+# mean_mark ('Mark', 4, 5, 5, 5, 5, 3, 4, 4, 5, 4, 5)
+
+# def print_lists(*kwargs, sep=' ', end='\n'):
+#     for i in kwargs:
+#         print (*i, sep=sep, end=end)
+#         # print(f'i = {i}, type i is {type(i)}\n')
+#
+#
+#
+# print_lists([1, 2, 3], [4, 5, 6], [7, 8, 9])
+# # 1 2 3
+# # 4 5 6
+# # 7 8 9
+#
+# print_lists([1, 2, 3], [4, 5, 6], [7, 8, 9], sep=', ', end='; ')
+# # 1, 2, 3; 4, 5, 6; 7, 8, 9;
+#
+# is_even = lambda num: '4eTHoe' if num % 2 == 0 \
+#     else 'He4eTHoe'
+# print(is_even(25))
+# print(is_even(20))
+
+
+'''Напишите lambda-функцию для расчёта гипотенузы прямоугольного треугольника: она принимает на вход длины двух 
+катетов и возвращает длину гипотенузы (третьей, самой длинной стороны прямоугольного треугольника). 
+c = (a**\ 2 + b**\ 2 ) ** (1/2)
+Формула: , где  и  — длины катетов,  — длина гипотенузы. Сохраните эту функцию в переменную hyp.'''
+
+# hyp = lambda a, b: (a ** 2 + b ** 2) ** (1 / 2)
+#
+# print(hyp(3, 4))
+# print(hyp(1, 9))
+
+
+'''Напишите функцию sort_sides, которая сортирует переданный в неё список.
+Входной список состоит из кортежей с парами чисел — длинами катетов прямоугольных треугольников.
+Функция должна возвращать список, отсортированный по возрастанию длин гипотенуз треугольников.
+Примечание: вам пригодится lambda-функция из предыдущего задания. При этом вам потребуется заменить lambda от 2 
+аргументов на lamba от одного аргумента и обращаться к элементам кортежа уже при вычислении гипотенузы. 
+Пример работы функции:
+
+print(sort_sides([(3,4), (1,2), (10,10)]))
+# [(1, 2), (3, 4), (10, 10)]'''
+
+# def sort_sides(l_in):
+#     l_in.sort(key=lambda n: (n[0] ** 2 + n[1] ** 2) ** (1/2))
+#     return l_in
+# print(sort_sides([(3,4), (1,2), (10,10)]))
+
+
+# print(sort_sides([(3,4), (1,2), (10,10)]))
+
+'''Напишите функцию get_less, которая принимает на вход через запятую список, состоящий из чисел, и ещё одно число. 
+
+Функция должна вернуть первое найденное число из списка, которое меньше переданного во втором аргументе. Если такого 
+числа нет, необходимо вернуть None. 
+
+Пример:
+
+l = [1, 5, 8,  10]
+print(get_less(l, 8))
+# 1
+ 
+print(get_less(l, 0))
+# None'''
+
+#
+# def get_less(list_in, num):
+#     for x in list_in:
+#         # print(f'IKS RAVEN {x}')
+#         if x < num:
+#             return (x)
+#     return None
+#
+#
+# l = [1, 5, 8, 10]
+# print(get_less(l, 8))
+# print(get_less(l, 0))
+
+
