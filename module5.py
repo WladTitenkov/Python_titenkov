@@ -682,3 +682,217 @@ print(get_less(l, 0))
 # print(get_less(l, 0))
 
 
+'''
+ЗАДАНИЕ 7.10 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+
+
+Напишите функцию split_date(date), которая принимает на вход строку, задающую дату, в формате ддммгггг без 
+разделителей. Функция должна вернуть кортеж из чисел (int): день, месяц, год. 
+
+Примечание. Здесь вам пригодятся срезы строк.
+
+Пример:
+
+print(split_date("31012019"))
+# (31, 1, 2019)'''
+
+#
+# def split_date(date):
+#     return (int(date[0:2]), int(date[2:4]), int(date[4:8]))
+#
+#
+# print(split_date("31012019"))
+
+
+'''ЗАДАНИЕ 7.11 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+Напишите функцию is_prime(num), которая проверяет, является ли число простым.
+
+Функция должна вернуть True, если число простое, иначе — False.
+
+Примечание. Простым называют число, которое делится только на 1 или на само себя без остатка. Число 1 простым не 
+является. 
+
+Пример:
+
+print(is_prime(1))
+print(is_prime(10))
+print(is_prime(13))
+# False
+# False
+# True'''
+#
+#
+# def is_prime(num):
+#     if num == 1:
+#         return False
+#     x = 2
+#     while (num % x) != 0:
+#         x += 1
+#     return x == num
+#
+#
+# print(is_prime(1))
+# print(is_prime(10))
+# print(is_prime(13))
+
+'''
+ЗАДАНИЕ 7.12 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+
+?
+
+Напишите функцию between_min_max(...), которая принимает на вход числа через запятую.
+
+Функция возвращает среднее между максимумом и минимумом этих чисел.
+
+Пример:
+
+print(between_min_max(10))
+print(between_min_max(1,2,3,4,5))
+# 10.0
+# 3.0'''
+#
+# def between_min_max(*nums):
+#     return((min(nums)+max(nums)) / 2)
+#
+#
+#
+#
+#
+# print(between_min_max(10))
+# print(between_min_max(1, 2, 3, 4, 5))
+
+'''
+Задание 7.13
+Напишите функцию best_student(...), которая принимает на вход в виде именованных аргументов фамилии студентов и их номера в рейтинге (нагляднее в примере).
+
+Необходимо вернуть фамилию студента с минимальным номером по рейтингу.
+
+Пример:
+
+print(best_student(Tom=12, Mike=3))
+print(best_student(Tom=12))
+print(best_student(Tom=12, Jerry=1, Jane=2))
+# Mike
+# Tom
+# Jerry'''
+
+# def best_student(**student_list):
+#     for a, b in student_list.items():
+#         if b == (min(student_list.values())):
+#             return a
+#
+#
+#
+# print(best_student(Tom=12, Mike=3))
+# print(best_student(Tom=12))
+# print(best_student(Tom=12, Jerry=1, Jane=2))
+
+
+# is_palindrom = lambda rever: "yes" if rever == rever[::-1] else "no"
+#
+# print(is_palindrom('12321'))
+
+'''ЗАДАНИЕ 7.15 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+
+?
+
+Напишите lambda-функцию area, которая принимает на вход два числа — стороны прямоугольника — через запятую и 
+возвращает площадь прямоугольника. 
+
+Пример:
+
+print(area(12,5))
+# 60'''
+
+# area = lambda a,b: a * b
+
+'''ЗАДАНИЕ 7.17 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+
+?
+
+Напишите функцию sort_ignore_case, которая принимает на вход список и сортирует его без учёта регистра по алфавиту.
+
+Функция возвращает отсортированный список.
+
+Пример:
+
+print(sort_ignore_case(['Acc', 'abc']))
+# ['abc', 'Acc']'''
+
+# def sort_ignore_case(ls):
+#     ls.sort(key=lambda x: x.lower())
+#     return ls
+#
+#
+# print(sort_ignore_case(['Acc', 'abc']))
+
+'''ЗАДАНИЕ 7.16 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+
+?
+
+Перепишите функцию between_min_max из задания 7.12 в lambda-функцию. Функция принимает на вход числа через запятую и 
+возвращает одно число — среднее между максимумом и минимумом этих чисел. 
+
+Пример:
+
+print(between_min_max(1,2,3,4,5))
+# 3.0'''
+
+# between_min_max = lambda *nums: (min(nums) + max(nums)) / 2
+#
+# print(between_min_max(10))
+# print(between_min_max(1, 2, 3, 4, 5))
+
+
+'''ЗАДАНИЕ 7.18 (ВЫПОЛНЯЕТСЯ В CODEBOARD НИЖЕ)
+
+?
+
+*Задание повышенной сложности
+
+Напишите функцию exchange(usd, rub, rate), которая может принимать на вход сумму в долларах (usd), сумму в рублях (
+rub) и обменный курс (rate). Обменный курс показывает, сколько стоит один доллар. Например, курс 85.46 означает, 
+что один доллар стоит 85 рублей и 46 копеек. 
+
+В функцию должно одновременно передавать два аргумента. Если передано менее двух аргументов, должна возникнуть ошибка 
+ValueError('Not enough arguments'). Если же передано три аргумента, должна возникнуть ошибка: ValueError('Too many 
+arguments'). 
+
+Функция должна находить третий аргумент по двум переданным. Например, если переданы суммы в разных валютах, 
+должен возвращаться обменный курс. Если известны сумма в рублях и курс, должна быть получена эквивалентная сумма в 
+долларах, аналогично — если передана сумма в долларах и обменный курс. 
+
+Пример:
+
+print(exchange(usd=100, rub=8500))
+print(exchange(usd=100, rate=85))
+print(exchange(rub=1000, rate=85))
+# 85.0
+# 8500
+# 11.764705882352942
+print(exchange(rub=1000, rate=85, usd=90))
+# ValueError: Too many arguments
+print(exchange(rub=1000))
+# ValueError: Not enough arguments'''
+
+def exchange(usd=None, rub=None, rate=None):
+    if usd is not None and rub is not None and rate is not None:
+        raise ValueError('Too many arguments')
+    if rub is not None:
+        if rate is not None:
+            return rub / rate
+        if usd is not None:
+            return rub / usd
+    if usd is not None:
+        if rate is not None:
+            return usd * rate
+    raise ValueError('Not enough arguments')
+
+
+
+
+print(exchange(usd=100, rub=8500))
+print(exchange(usd=100, rate=85))
+print(exchange(rub=1000, rate=85))
+print(exchange(rub=1000, rate=85, usd=90))
+print(exchange(rub=1000))
