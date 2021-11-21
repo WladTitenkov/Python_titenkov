@@ -875,24 +875,56 @@ print(exchange(rub=1000, rate=85, usd=90))
 print(exchange(rub=1000))
 # ValueError: Not enough arguments'''
 
-def exchange(usd=None, rub=None, rate=None):
-    if usd is not None and rub is not None and rate is not None:
-        raise ValueError('Too many arguments')
-    if rub is not None:
-        if rate is not None:
-            return rub / rate
-        if usd is not None:
-            return rub / usd
-    if usd is not None:
-        if rate is not None:
-            return usd * rate
-    raise ValueError('Not enough arguments')
+# def exchange(usd=None, rub=None, rate=None):
+#     if usd is not None and rub is not None and rate is not None:
+#         raise ValueError('Too many arguments')
+#     if rub is not None:
+#         if rate is not None:
+#             return rub / rate
+#         if usd is not None:
+#             return rub / usd
+#     if usd is not None:
+#         if rate is not None:
+#             return usd * rate
+#     raise ValueError('Not enough arguments')
+#
+#
+#
+#
+# print(exchange(usd=100, rub=8500))
+# print(exchange(usd=100, rate=85))
+# print(exchange(rub=1000, rate=85))
+# print(exchange(rub=1000, rate=85, usd=90))
+# print(exchange(rub=1000))
 
 
+# if (9*8)**(1/3) > 7:
+#     print("истина")
+# else:
+#     print ("ложь")
 
+'''Защита от дурака'''
+'''Титенков Владимир группа 76 курса Data Science'''
 
-print(exchange(usd=100, rub=8500))
-print(exchange(usd=100, rate=85))
-print(exchange(rub=1000, rate=85))
-print(exchange(rub=1000, rate=85, usd=90))
-print(exchange(rub=1000))
+while True:  # для возможности повторного ввода данных запаковываем ввод и проверку в "бесконечный цикл"
+    name = input('Введите имя: ')
+    if name.isalpha():
+        print(f'Принято, Привет {name.capitalize()}!')
+        break
+    else:
+        print(f'Не корректное имя!\nВы ввели "{name}")')
+
+while True:
+    birthday = input('Введите дату рождения в формате год-месяц-день: ')
+    try:
+        year, month, day = birthday.split("-")  # пробуем разобрать строку используя символ разделитель "-" если это
+        # не удается, обрабатываем ошибку и начинаем цикл сначала. Если удается приступаем к повторной проверке
+
+        if not (0 < int(year) <= 2021 and 0 < int(month) <= 12 and 0 < int(day) <= 31):  # проверяем диапазоны значений
+            raise Exception("")  # искусственно вызываем ошибку если не срабатывает проверка диапазона введенных значений
+        print(f'Принято, Год = {year}, месяц = {month}, день = {day}')
+        break
+    except:
+        print(f'Вы некорректно ввели дату, попробуйте еще раз, например: "2021-11-21')
+
+# mail = input('Введите почту: ')
